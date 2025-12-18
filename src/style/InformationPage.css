@@ -170,7 +170,7 @@
     align-self: flex-start;
 }
 
-@media  screen and (max-width: 640px) {
+@media screen and (min-width: 0px) and (max-width: 640px) {
     .info-content {
         width: 90%;
         margin-top: -50px;

@@ -356,7 +356,7 @@
 }
 
 
-@media screen and (max-width: 640px) {
+@media screen and (min-width: 0px) and (max-width: 640px) {
   /* Make main-content a flex container */
   .main-content {
     display: flex;
