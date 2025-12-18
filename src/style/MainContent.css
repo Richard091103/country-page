@@ -1,0 +1,406 @@
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
+.main-content {
+  margin: 20px auto;
+  padding: 40px;
+  border-radius: 8px;
+  width: 80%;
+  background-color: #1c1d1f;
+  color: #fff;
+  margin-top: -100px;
+  margin-bottom: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 
+    0 0 15px rgba(255, 255, 255, 0.2),
+    inset 0 0 15px rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.left-content p {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+  margin-left: 20px;
+}
+
+/* Search container */
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 400px;
+  margin-right: 20px;
+}
+
+.search-input {
+  width: 100%;
+  height: 45px;
+  padding: 6px 40px; /* Same padding on both sides */
+  font-size: 15px;
+  border-radius: 10px;
+  border: 2px solid #4a4b4d;
+  background-color: #2a2b2e;
+  color: #fff;
+  transition: all 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+}
+
+.pi-search {
+  position: absolute;
+  left: 15px;
+  color: #9ca3af; /* Optional: make icon gray */
+  z-index: 10;
+  pointer-events: none; /* So clicking on icon doesn't interfere */
+}
+
+.pi-times {
+  position: absolute;
+  right: 15px;
+  color: #9ca3af;
+  cursor: pointer;
+  z-index: 10;
+  transition: color 0.2s ease;
+}
+
+.pi-times:hover {
+  color: #fff; /* Optional: change color on hover */
+}
+
+/* Main content layout */
+.content-layout {
+  display: flex;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+/* Filtered Sidebar - LEFT */
+.filtered-sidebar {
+  flex: 0 0 30%;
+  padding: 20px;
+  border-radius: 10px;
+  height: 900px;
+  overflow-y: auto;
+}
+
+/* Sort section */
+.Sort p {
+  margin: 0 0 8px 0;
+  font-size: 1.2rem;
+  font-weight: normal;
+  color: #ffffff;
+}
+
+.Sort :deep(.my-dropdown) {
+  width: 100%;
+  background-color: #1c1d1f;
+  border-radius: 10px;
+  height: 50px;
+  font-size: 14px !important;
+  margin-top: 10px;
+}
+
+.Sort :deep(.my-dropdown .p-dropdown-label) {
+  color: #fff;
+  padding: 0.8rem 1rem;
+  font-size: 18px !important;
+  border-radius: 8px;
+}
+
+.Sort :deep(.my-dropdown .p-dropdown-item) {
+  color: #e5e7eb;
+  padding: 0.5rem 1rem;
+  font-size: 15px !important;
+}
+
+/* Region Sorting */
+.Region-Sorting {
+  margin-top: 30px;
+}
+
+.Region-Sorting p {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: normal;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.RegionBtn {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+/* Add active state styling for region buttons */
+.RegionBtn button.active {
+  background-color: #4a9eff;
+  color: #fff;
+  font-weight: bold; 
+}
+
+.RegionBtn button {
+  padding: 10px 25px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #272a2f43;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.RegionBtn button:hover {
+  background-color: #3a3d42;
+}
+
+.RegionBtn button.active:hover {
+  background-color: #4a9eff; /* Keep the active color on hover */
+}
+
+
+/* Status Sorting */
+.Status-Sorting {
+  margin-top: 30px;
+  font-size: 1.2rem;
+  font-weight: normal;
+  color: #ffffff;
+}
+
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.checkbox-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px;
+  cursor: pointer;
+}
+
+.checkbox-label:hover {
+  color: #60a5fa;
+}
+
+/* Checkbox styling */
+:deep(.custom-checkbox .p-checkbox-box) {
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  border-width: 2px;
+  background-color: #2a2b2e;
+}
+
+:deep(.custom-checkbox .p-checkbox-box .p-checkbox-icon) {
+  font-size: 14px;
+  color: #fff;
+}
+
+:deep(.custom-checkbox .p-checkbox-box.p-highlight) {
+  background-color: #60a5fa;
+  border-color: #60a5fa;
+}
+
+:deep(.custom-checkbox .p-checkbox-box:hover) {
+  border-color: #60a5fa;
+}
+
+/* Data View - RIGHT */
+.DataView {
+  flex: 1;
+  background-color: transparent;
+  padding: 20px;
+  border-radius: 10px;
+  min-height: 500px;
+  /* Make this container scrollable */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.table-container {
+  width: 100%;
+  /* Make this take available space */
+  flex: 1;
+  background-color: transparent;
+  /* Make container scrollable */
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+
+}
+
+/* DataTable styling - Simplified */
+:deep(.custom-datatable) {
+  width: 100%;
+  background-color: transparent;
+  color: #fff;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Make the table scrollable */
+:deep(.custom-datatable .p-datatable-wrapper) {
+  flex: 1;
+  overflow: auto;
+}
+
+/* DataTable header */
+:deep(.custom-datatable .p-datatable-thead > tr > th) {
+  background-color: transparent !important;
+  color: #fff;
+  border-color: #3a3d42;
+  padding: 1rem;
+  font-weight: 600;
+  text-align: center;
+  vertical-align: middle;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+:deep(.custom-datatable .p-column-header-content) {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 100%;
+}
+
+/* Data View - RIGHT */
+.DataView {
+  flex: 1;
+  background-color: transparent;
+  padding: 20px;
+  /* border-radius: 10px; */
+  min-height: 500px;
+}
+
+.table-container {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: transparent;
+}
+
+:deep(.custom-datatable) {
+  width: 100%;
+  background-color: transparent;
+  color: #fff;
+}
+
+:deep(.custom-datatable .p-datatable-thead > tr > th) {
+  background-color: transparent !important;
+  color: #fff;
+  border-color: #3a3d42;
+  padding: 1rem;
+  font-weight: 600;
+  text-align: center;
+  vertical-align: middle;
+}
+
+:deep(.custom-datatable .p-column-header-content) {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 100%;
+}
+
+/* Dataview Body */
+:deep(.custom-datatable .p-datatable-tbody > tr > td) {
+  border-color: transparent !important;
+  padding: 1rem;
+  background-color: #1c1d1f;
+  text-align: center;
+  vertical-align: middle;
+  height: 100%;
+}
+
+:deep(.custom-datatable .p-datatable-tbody > tr:hover) {
+  background-color: #6363634b;
+}
+
+:deep(.custom-datatable .p-datatable-tbody > tr:hover > td) {
+  background-color: #6363634b !important; 
+}
+
+/* Data Paginator */
+:deep(.p-datatable .p-paginator) {
+  background: transparent !important;
+  border: none !important;
+  margin-bottom: -20px;
+}
+
+
+:deep(.p-paginator-bottom) {
+  background: transparent !important;
+  margin-bottom: 20px; 
+}
+
+:deep(.p-paginator-page:not(.p-highlight):hover) {
+  background: transparent !important;
+}
+
+
+@media screen and (max-width: 640px) {
+  /* Make main-content a flex container */
+  .main-content {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin-top: -100PX;
+    margin-bottom: 20px;
+  }
+  
+  /* Order the direct children of .main-content */
+  .top-content {
+    order: 1;
+  }
+  
+  .filtered-sidebar {
+    order: 2;
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    padding: 15px;
+    margin: 20px 0;
+  }
+  
+  .DataView {
+    order: 3;
+    width: 100%;
+  }
+  
+  /* Remove .content-layout from the visual flow */
+  .content-layout {
+    display: contents; /* Makes its children become direct children of .main-content */
+  }
+  
+  /* Adjust search container */
+  .search-container {
+    width: 403px;
+    margin: 0 0 0 15px;
+
+  }
+  
+  .left-content {
+    margin: 0 0 -10px -2px;
+    text-align: left;
+  }
+  
+ 
+}
