@@ -356,7 +356,7 @@
 }
 
 
-@media screen and (min-width: 0px) and (max-width: 640px) {
+@media screen and (max-width: 640px) {
   /* Make main-content a flex container */
   .main-content {
     display: flex;
@@ -387,7 +387,7 @@
   
   /* Remove .content-layout from the visual flow */
   .content-layout {
-    display: contents; /* Makes its children become direct children of .main-content */
+    display: contents;
   }
   
   /* Adjust search container */
@@ -403,4 +403,105 @@
   }
   
  
+}
+
+
+@media screen and (max-width: 480px) {
+  /* Make main-content a flex container */
+  .main-content {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin-top: -100PX;
+    margin-bottom: 20px;
+  }
+  
+  /* Order the direct children of .main-content */
+  .top-content {
+    order: 1;
+  }
+  
+  .filtered-sidebar {
+    order: 2;
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    padding: 15px;
+    margin: 20px 0;
+  }
+  
+  .DataView {
+    order: 3;
+    width: 100%;
+  }
+  
+  /* Remove .content-layout from the visual flow */
+  .content-layout {
+    display: contents;
+  }
+  
+  .left-content p {
+    font-size: large;
+  }
+  /* Adjust search container */
+  .search-container {
+    width: 100%;
+    margin: 0 0 0 15px;
+
+  }
+  
+  .left-content {
+    margin: 0 0 -10px -2px;
+    text-align: left;
+  }
+
+  /* Paginator Mobile Fixes */
+  :deep(.p-paginator) {
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    padding: px 5px !important;
+  }
+  
+  :deep(.p-paginator .p-paginator-first,
+         .p-paginator .p-paginator-prev,
+         .p-paginator .p-paginator-next,
+         .p-paginator .p-paginator-last) {
+    min-width: 28px !important;
+    height: 28px !important;
+    margin: 2px !important;
+  }
+  
+  :deep(.p-paginator .p-paginator-pages .p-paginator-page) {
+    min-width: 28px !important;
+    height: 28px !important;
+    margin: 2px !important;
+    font-size: 12px !important;
+  }
+  
+  /* :deep(.p-paginator-bottom) {
+    margin-top: 10px !important;
+    margin-bottom: 0 !important;
+    padding: 8px 0 !important;
+    background: transparent !important;
+  }
+   */
+  /* Ensure table wrapper has enough space */
+  :deep(.p-datatable-wrapper) {
+    min-height: 200px !important;
+    padding-bottom: 20px !important;
+  }
+  
+  /* Paginator responsive text */
+  :deep(.p-paginator .p-paginator-current) {
+    font-size: 12px !important;
+    margin: 0 5px !important;
+  }
+  
+  /* Hide page numbers if too many, show only essential */
+  :deep(.p-paginator .p-paginator-pages) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
 }

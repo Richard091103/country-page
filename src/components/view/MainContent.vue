@@ -134,6 +134,7 @@
                             </template>
                         </Column>
                         <Column field="region" header="Region" style="width: 20%"></Column>
+                        
                     </DataTable>
                 </div>
             </div>
