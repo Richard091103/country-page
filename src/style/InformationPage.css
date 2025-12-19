@@ -213,7 +213,7 @@
 @media screen and (max-width: 480px) {
     .info-content {
         width: 90%;
-        margin-top: -200px;
+        margin-top: -80px;
     }
 
     .country-title img {
